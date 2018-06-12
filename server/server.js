@@ -23,10 +23,10 @@ io.on('connection', function(socket) {
 
 	socket.broadcast.emit('newMessage',generateMessage('Admin','New user joined'));
 
-	socket.on('createMessage', function(mssg) {
+	socket.on('createMessage', (mssg,callback) =>{
 		console.log("The server recieved the message", mssg);
 		io.emit('newMessage', generateMessage(mssg.from,mssg.text));
-
+		callback('This is an acknowledgment from the server');
 		// socket.broadcast.emit('newMessage', {
 		// 	from: mssg.from,
 		// 	text: mssg.text,
