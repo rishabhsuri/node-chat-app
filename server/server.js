@@ -27,11 +27,6 @@ io.on('connection', function(socket) {
 		console.log("The server recieved the message", mssg);
 		io.emit('newMessage', generateMessage(mssg.from,mssg.text));
 		callback('This is an acknowledgment from the server');
-		// socket.broadcast.emit('newMessage', {
-		// 	from: mssg.from,
-		// 	text: mssg.text,
-		// 	createdAt: new Date().getTime()
-		// })
 	});
 
 	socket.on('createLocationMessage',(coords)=>{
