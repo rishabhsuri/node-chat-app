@@ -14,7 +14,7 @@ describe('generateMessage',()=>{
 
 
 describe('generatLocationMessage',()=>{
-	it('should generate correct location',()=>{
+	it('Should generate correct location',()=>{
 		var from='Rishabh',latitude='1',longitude='1';
 		var res=generateLocationMessage(from,latitude,longitude);
 		expect(res).toInclude({
